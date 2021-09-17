@@ -3,8 +3,8 @@
 		return {
 			props: {
 				status,
-				error
-			}
+				error,
+			},
 		};
 	}
 </script>
@@ -16,4 +16,4 @@
 
 <h1>{status} {error.name}</h1>
 <p>{error.message}</p>
-Back to <a href="/">Home</a>
+Back to<a href="/">Home</a>

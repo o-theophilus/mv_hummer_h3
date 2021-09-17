@@ -1,24 +1,10 @@
+<iframe src="mv/main.html" frameborder="0" title="scene" />
 
-    <iframe
-        src="mv/main.html"
-        frameborder="0"
-        title="scene"
-    ></iframe>
+<style>
+	iframe {
+		width: 100%;
+		height: 100%;
 
-
-
-
-
-	<style>
-
-
-		iframe {
-			width: 100%;
-			height: 100%;
-
-			background-color: white;
-		}
-
+		background-color: white;
+	}
 </style>
-
-
