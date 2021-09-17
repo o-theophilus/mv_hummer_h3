@@ -3,5 +3,3 @@ This is an interactive 3D visualization demo. It aims to illustrate how WebGL of
 
 # Todo
 [ x ] fullscreen
-
-[ x ] widescreen menu always open

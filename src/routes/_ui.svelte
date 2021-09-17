@@ -1,8 +1,8 @@
 <script>
 	import SVG from "$lib/svg.svelte";
+	import { openMobileMenu } from "$lib/store.js";
 
 	let fulscreen = false;
-	let menu = false;
 	let speed = 1;
 </script>
 
@@ -10,9 +10,9 @@
 	<div
 		class="btn"
 		id="menu"
-		class:menu
+		class:open={$openMobileMenu}
 		on:click={() => {
-			menu = !menu;
+			$openMobileMenu = !$openMobileMenu;
 		}}
 	>
 		<SVG type="angle" size="20" />
@@ -30,7 +30,7 @@
 		/>
 	</div>
 
-	<div class="panel01" class:menu>
+	<div class="panel01" class:open={$openMobileMenu}>
 		<div class="btn" id="showAnnotation">
 			<SVG type="info" size="30" />
 		</div>
@@ -81,7 +81,6 @@
 		cursor: pointer;
 		pointer-events: auto;
 
-		/* background-color: transparent; */
 		background-color: white;
 
 		border: 3px solid;
@@ -102,10 +101,16 @@
 		left: var(--pad);
 		transform: rotate(-90deg);
 	}
-	#menu.menu {
+	@media screen and (min-width: 900px) {
+		#menu {
+			display: none;
+		}
+	}
+	#menu.open {
 		transform: rotate(90deg);
 	}
 	#fullScreen {
+		display: none;
 		right: var(--pad);
 	}
 
@@ -120,8 +125,14 @@
 
 		gap: 10px;
 	}
+	@media screen and (min-width: 900px) {
+		.panel01 {
+			top: var(--pad);
+			display: flex;
+		}
+	}
 
-	.panel01.menu {
+	.panel01.open {
 		display: flex;
 	}
 
